@@ -9,7 +9,6 @@ default_args = {
     'retries':1,
 }
 
-
 def get_data():
     import requests
     response = requests.get("https://randomuser.me/api/")

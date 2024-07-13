@@ -6,4 +6,4 @@ dung tat ca cac container dang chay
 docker exec -it cassandra cqlsh localhost 9042 -u cassandra -p cassandra
 decribe spark_streams.created_users
 docker exec -it broker kafka-topics --create --topic users_created --bootstrap-server broker:29092 --partitions 1 --replication-factor 1
-
+docker system prune -a 
