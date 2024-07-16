@@ -4,6 +4,8 @@ docker stop $(docker ps-q)
 dung tat ca cac container dang chay
 
 docker exec -it cassandra cqlsh localhost 9042 -u cassandra -p cassandra
-decribe spark_streams.created_users
+describe spark_streams.created_users;
+select * from spark_streams.created_users;
 docker exec -it broker kafka-topics --create --topic users_created --bootstrap-server broker:29092 --partitions 1 --replication-factor 1
 docker system prune -a 
+docker run -it --network host --rm confluentinc/cp-kafka:latest kafka-console-consumer --bootstrap-server localhost:9092 --topic users_created --from-beginning #check data in topic
